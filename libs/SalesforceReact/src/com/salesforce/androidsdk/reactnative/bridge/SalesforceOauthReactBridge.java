@@ -31,7 +31,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
-import com.salesforce.androidsdk.reactnative.ui.SalesforceReactActivity;
+import com.salesforce.androidsdk.reactnative.ui.SalesforceReactActivityInterface;
 
 public class SalesforceOauthReactBridge extends ReactContextBaseJavaModule {
 
@@ -49,7 +49,7 @@ public class SalesforceOauthReactBridge extends ReactContextBaseJavaModule {
     @ReactMethod
     public void authenticate(ReadableMap args,
                              Callback successCallback, Callback errorCallback) {
-        final SalesforceReactActivity currentActivity = (SalesforceReactActivity) getCurrentActivity();
+        final SalesforceReactActivityInterface currentActivity = (SalesforceReactActivityInterface) getCurrentActivity();
         if (currentActivity != null) {
             currentActivity.authenticate(successCallback, errorCallback);
         }
@@ -64,7 +64,7 @@ public class SalesforceOauthReactBridge extends ReactContextBaseJavaModule {
     @ReactMethod
     public void getAuthCredentials(ReadableMap args,
                                    Callback successCallback, Callback errorCallback) {
-        final SalesforceReactActivity currentActivity = (SalesforceReactActivity) getCurrentActivity();
+        final SalesforceReactActivityInterface currentActivity = (SalesforceReactActivityInterface) getCurrentActivity();
         if (currentActivity != null) {
             currentActivity.getAuthCredentials(successCallback, errorCallback);
         }
@@ -78,7 +78,7 @@ public class SalesforceOauthReactBridge extends ReactContextBaseJavaModule {
     @ReactMethod
     public void logoutCurrentUser(ReadableMap args,
                                   Callback successCallback, Callback errorCallback) {
-        final SalesforceReactActivity currentActivity = (SalesforceReactActivity) getCurrentActivity();
+        final SalesforceReactActivityInterface currentActivity = (SalesforceReactActivityInterface) getCurrentActivity();
         if (currentActivity != null) {
             currentActivity.logout(successCallback);
         }
