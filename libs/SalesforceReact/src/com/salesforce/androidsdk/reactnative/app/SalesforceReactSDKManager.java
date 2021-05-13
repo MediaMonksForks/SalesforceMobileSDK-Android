@@ -39,7 +39,7 @@ import com.salesforce.androidsdk.reactnative.bridge.SalesforceNetReactBridge;
 import com.salesforce.androidsdk.reactnative.bridge.SalesforceOauthReactBridge;
 import com.salesforce.androidsdk.reactnative.bridge.SmartStoreReactBridge;
 import com.salesforce.androidsdk.reactnative.bridge.MobileSyncReactBridge;
-import com.salesforce.androidsdk.reactnative.ui.SalesforceReactActivity;
+import com.salesforce.androidsdk.reactnative.ui.SalesforceReactActivityInterface;
 import com.salesforce.androidsdk.ui.LoginActivity;
 import com.salesforce.androidsdk.util.EventsObservable;
 import com.salesforce.androidsdk.util.EventsObservable.EventType;
@@ -157,7 +157,7 @@ public class SalesforceReactSDKManager extends MobileSyncSDKManager {
 				"React Native Dev Support", new DevActionHandler() {
 					@Override
 					public void onSelected() {
-						((SalesforceReactActivity) frontActivity).showReactDevOptionsDialog();
+						((SalesforceReactActivityInterface) frontActivity).showReactDevOptionsDialog();
 					}
 				});
 
